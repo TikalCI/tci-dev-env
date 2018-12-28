@@ -28,6 +28,12 @@ Please notice that the **reset** and **stop-reset** actions delete the Jenkins s
 
 The loaded server is already configured to work with [<img src="./src/resources/images/tci-library.png" width="60" height="60"> tci-library](https://github.com/TikalCI/tci-library) and<br/>[<img src="./src/resources/images/tci-pipelines.png" width="60" height="60"> tci-pipelines](https://github.com/TikalCI/tci-pipelines) from the file you specify in the **environemnts/tci-dev-env/.config** file.
 
-If you want to participate in the TCI project as an active contributor, please refer to [<img src="./src/resources/images/tci-dev.png" width="60" height="60"> tci-dev-env](https://github.com/TikalCI/tci-dev-env).
+### ***Guidelines for working on one of the TCI submodules***
+In the tci-dev-env cloned working copy, there are empty submodules folder (e.g. tci, tci-library).
+In order to start working on a submodule, you should initialize it by running: **./init-submodule.sh <module>** (e.g. ./init-submodule.sh tci-library).
+After running the above command, you can start working on the module, while keeping the following rules:
+* Always work on a feature-branch instead of the 'master' branch, and open a Pull-request once done.
+* If you want the loaded Jenkins to use the branch while you work on it for the 'tci-library' and 'tci-pipelines' modules, you should also update the **environemnts/tci-server/.config** file accordigly and reload the server.
+* Each module have a GitHub-project and GitHub-issues, so please work with it and update the issue ID (format #<number>) inside your commit messages. If the branch name contains that format, it will be done for you automatically.
 
 
