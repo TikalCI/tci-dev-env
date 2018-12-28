@@ -13,8 +13,8 @@ With this repository, you can establish a TCI development environment with a Jen
 In order to establish a <img src="./src/resources/images/tci-dev.png" width="60" height="60"> **tci-dev-env**, follow the below instructions on the server/laptop/desktop you want to host it:
 
 1. Make sure you have the following commands installed: **git**, **docker** & **docker-compose**.
-1. Make sure you have an SSH private key file on the hosting server. The default path it looks for is ~/.ssh/id_rsa, but you can configure it to use a different file.
-1. clone [this repository](git@github.com:TikalCI/tci-dev-env.git) to a local folder and cd to it.
+1. Make sure you have an SSH private key file on the hosting server. The default path it looks for is **~/.ssh/id_rsa**, but you can configure it to use a different file.
+1. clone this repository ([git@github.com:TikalCI/tci-dev-env.git](git@github.com:TikalCI/tci-dev-env.git)) to a local folder and cd to it.
 1. Run _**./tci-dev-env.sh info**_ to see that the path to the SSH private key file is correct. If it is not correct, change it in the generated **environemnts/tci-dev-env/.config** file.
 1. Run _**./tci-dev-env.sh start**_ to load the server. 
 1. The first load will take at least 10 minutes, so please wait until the prompt is back.
