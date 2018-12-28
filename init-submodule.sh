@@ -10,5 +10,8 @@ else
 fi
 
 git submodule update --init $submodule
+cd $submodule
+git status
+cd ..
 ./tci-dev-env.sh info
 
