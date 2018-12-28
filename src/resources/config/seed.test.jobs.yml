@@ -1,0 +1,45 @@
+seed_jobs:
+  test-tciOverall:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestOverallSimple/Jenkinsfile
+    executeWhen: never
+
+  test-tciGeneral:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestGeneral/Jenkinsfile
+    executeWhen: never
+
+  test-tciBuildUser:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestBuildUser/Jenkinsfile
+    executeWhen: never
+
+  test-tciJobs:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestJobs/Jenkinsfile
+    executeWhen: never
+
+  test-tciGit:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestGit/Jenkinsfile
+    executeWhen: never

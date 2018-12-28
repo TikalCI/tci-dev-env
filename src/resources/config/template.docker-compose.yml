@@ -1,0 +1,24 @@
+version: '2'
+services:
+  jenkins-master:
+    image: tci-master
+    ports:
+      - '8080:8080'
+      - '50000:50000'
+    volumes:
+      - '${PWD}/config.yml:/config.yml'
+      - '.data/jenkins_home:/var/jenkins_home'
+      - '.data/jenkins-workspace-home:/jenkins-workspace-home'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    environment:
+      JAVA_OPTS_MEM: '-Xmx1g'
+      # Disable hyper provision of slaves - docker plugin strategy is enough
+      JAVA_OPTS_LOAD_STATS_CLOCK: ''
+      JENKINS_ENV_ADMIN_USER: admin
+      JENKINS_ENV_HOST_IP: ${TCI_HOST_IP}
+      JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
+      JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
+      JENKINS_ADMIN_PASSWORD: admin
+      GIT_PRIVATE_KEY: ${GIT_PRIVATE_KEY}
+      TCI_LIBRARY_BRANCH: ${TCI_LIBRARY_BRANCH}
+      TCI_PIPELINES_BRANCH: ${TCI_PIPELINES_BRANCH}
