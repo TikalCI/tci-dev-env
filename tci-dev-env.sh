@@ -2,6 +2,7 @@
 
 set -e
 
+cp src/resources/git/hooks/prepare-commit-msg .git/hooks 2> /dev/null | true
 cp src/resources/git/hooks/prepare-commit-msg .git/modules/tci/hooks 2> /dev/null | true
 cp src/resources/git/hooks/prepare-commit-msg .git/modules/tci-bloody-jenkins/hooks 2> /dev/null | true
 cp src/resources/git/hooks/prepare-commit-msg .git/modules/tci-cli/hooks 2> /dev/null | true
