@@ -17,5 +17,5 @@
 	path = tci-master
 	url = git@github.com:TikalCI/tci-master.git
 [submodule "tci-bloody-jenkins"]
-	path = tci-master
+	path = tci-bloody-jenkins
 	url = git@github.com:TikalCI/tci-bloody-jenkins.git
