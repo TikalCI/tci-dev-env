@@ -2,6 +2,14 @@
 
 set -e
 
+cp src/resources/git/hooks/prepare-commit-msg tci/.git/hooks 2> /dev/null | true
+cp src/resources/git/hooks/prepare-commit-msg tci-bloody-jenkins/.git/hooks 2> /dev/null | true
+cp src/resources/git/hooks/prepare-commit-msg tci-cli/.git/hooks 2> /dev/null | true
+cp src/resources/git/hooks/prepare-commit-msg tci-jnlp-node/.git/hooks 2> /dev/null | true
+cp src/resources/git/hooks/prepare-commit-msg tci-library/.git/hooks 2> /dev/null | true
+cp src/resources/git/hooks/prepare-commit-msg tci-master/.git/hooks 2> /dev/null | true
+cp src/resources/git/hooks/prepare-commit-msg tci-pipelines/.git/hooks 2> /dev/null | true
+
 mkdir -p environments/tci-dev-env
 cd environments/tci-dev-env
 

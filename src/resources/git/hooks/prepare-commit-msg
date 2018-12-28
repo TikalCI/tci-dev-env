@@ -1,0 +1,2 @@
+NAME=$(git branch | grep '*' | sed 's/* //') 
+echo "[Branch] $NAME" >> "$1"
