@@ -94,7 +94,7 @@ if [[ "$action" == "start" || "$action" == "clean-start"  || "$action" == "resta
     cat ../../src/resources/config/seed.test.jobs.yml >> config.yml
     mkdir -p .data/jenkins_home/userContent
     cp -f ../../src/resources/images/tci-small-logo.png .data/jenkins_home/userContent | true
-    cp -f ../../src/resources/config/tci.css .data/jenkins_home/userContent | true
+    cp -f ../../src/resources/config/dev-env-tci.css .data/jenkins_home/userContent/tci.css | true
     cp -f ../../src/resources/config/org.codefirst.SimpleThemeDecorator.xml .data/jenkins_home | true
     docker-compose up -d
     sleep 2

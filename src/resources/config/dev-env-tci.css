@@ -1,0 +1,27 @@
+#jenkins-head-icon {
+    width:0px;
+    height:0px;
+    padding: 19px;
+background: url(tci-small-logo.png);
+}
+#header {
+    background-color: slategray;
+    height: 40px;
+}
+
+
+.logo span {
+    display: none;
+  }
+  
+  .logo:after {
+    content: 'TCI development environment';
+    font-weight: bold;
+    font-size: 26px;
+    position: relative;
+    color: orange;
+    right: -160px;
+    top: 10px;
+    display: block;
+    color: orange;
+  }
