@@ -24,8 +24,8 @@ fi
 if [ ! -f docker-compose.yml ]; then
     cp ../../src/resources/config/template.docker-compose.yml docker-compose.yml
 fi
-if [ ! -f dev-env-tci.css ]; then
-    cp ../../src/resources/config/dev-env-tci.css dev-env-tci.css
+if [ ! -f tci.css ]; then
+    cp ../../src/resources/config/tci.css tci.css
 fi
 if [ ! -f org.codefirst.SimpleThemeDecorator.xml ]; then
     cp ../../src/resources/config/org.codefirst.SimpleThemeDecorator.xml org.codefirst.SimpleThemeDecorator.xml
@@ -102,7 +102,7 @@ if [[ "$action" == "start" || "$action" == "clean-start"  || "$action" == "resta
 
     mkdir -p .data/jenkins_home/userContent
     cp -f ../../src/resources/images/tci-small-logo.png .data/jenkins_home/userContent | true
-    cp -f dev-env-tci.css .data/jenkins_home/userContent/tci.css | true
+    cp -f tci.css .data/jenkins_home/userContent/tci.css | true
     cp -f org.codefirst.SimpleThemeDecorator.xml .data/jenkins_home | true
     docker-compose up -d
     sleep 2
