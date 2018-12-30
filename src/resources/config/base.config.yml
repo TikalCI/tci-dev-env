@@ -5,6 +5,10 @@ security:
   remove_master_envvars:
   - '.*PASSWORD.*'
 
+jenkins:
+  slaveAgentPort: 50000
+  numExecutors: 0
+
 credentials:
   gitsshkey:
     type: sshkey

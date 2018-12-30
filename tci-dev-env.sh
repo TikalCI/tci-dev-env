@@ -17,8 +17,18 @@ cd environments/tci-dev-env
 if [ ! -f .config ]; then
     cp ../../src/resources/config/template.config .config
 fi
+if [ ! -f config.yml ]; then
+    cp ../../src/resources/config/base.config.yml config.yml
+    cat ../../src/resources/config/seed.test.jobs.yml >> config.yml
+fi
 if [ ! -f docker-compose.yml ]; then
     cp ../../src/resources/config/template.docker-compose.yml docker-compose.yml
+fi
+if [ ! -f dev-env-tci.css ]; then
+    cp ../../src/resources/config/dev-env-tci.css dev-env-tci.css
+fi
+if [ ! -f org.codefirst.SimpleThemeDecorator.xml ]; then
+    cp ../../src/resources/config/org.codefirst.SimpleThemeDecorator.xml org.codefirst.SimpleThemeDecorator.xml
 fi
 
 # activate set-env.sh script
@@ -90,12 +100,10 @@ if [[ "$action" == "start" || "$action" == "clean-start"  || "$action" == "resta
         docker tag tikalci/tci-master tci-master
     fi
 
-    cat ../../src/resources/config/base.config.yml > config.yml
-    cat ../../src/resources/config/seed.test.jobs.yml >> config.yml
     mkdir -p .data/jenkins_home/userContent
     cp -f ../../src/resources/images/tci-small-logo.png .data/jenkins_home/userContent | true
-    cp -f ../../src/resources/config/dev-env-tci.css .data/jenkins_home/userContent/tci.css | true
-    cp -f ../../src/resources/config/org.codefirst.SimpleThemeDecorator.xml .data/jenkins_home | true
+    cp -f dev-env-tci.css .data/jenkins_home/userContent/tci.css | true
+    cp -f org.codefirst.SimpleThemeDecorator.xml .data/jenkins_home | true
     docker-compose up -d
     sleep 2
     counter=0
