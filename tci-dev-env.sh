@@ -18,8 +18,7 @@ if [ ! -f .config ]; then
     cp ../../src/resources/config/template.config .config
 fi
 if [ ! -f config.yml ]; then
-    cp ../../src/resources/config/base.config.yml config.yml
-    cat ../../src/resources/config/seed.test.jobs.yml >> config.yml
+    cp ../../src/resources/config/template.config.yml config.yml
 fi
 if [ ! -f docker-compose.yml ]; then
     cp ../../src/resources/config/template.docker-compose.yml docker-compose.yml
