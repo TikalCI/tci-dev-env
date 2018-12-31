@@ -19,6 +19,8 @@ In order to establish a <img src="./src/resources/images/tci-dev.png" width="60"
 1. Run _**./tci-dev-env.sh start**_ to load the server. 
 1. The first load will take at least 10 minutes, so please wait until the prompt is back.
 1. Once the load is over, browse to [http://localhost:8080](http://localhost:8080) and login with admin/admin credentials.
+1. Run the **_tci-server-sanity-check_** job and see that the build passed OK (see below image).
+<img src="./src/resources/images/SanityCheck.png" width="60" height="60">
 
 Once the server is up, you can modify it (e.g. add LDAP configuration, add seed jobs, add credentials and much more) following the instructions as in [tci-master](https://github.com/TikalCI/tci-master).
 Please notice that the environments/tci-dev-env/config.yml file is a generated file, so it is being overwriten once you release the server.
