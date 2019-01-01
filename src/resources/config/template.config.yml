@@ -17,12 +17,17 @@ credentials:
     passphrase:
     privatekey: |
       ${GIT_PRIVATE_KEY}
+
 tools:
   installations:
     maven:
       type: maven
       installers:
         - id: '3.6.0'
+
+environment:
+  TCI_DEBUG_MODE: 'true'
+
 clouds:
   tci-jnlp-nodes:
     type: docker
