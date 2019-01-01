@@ -102,3 +102,30 @@ seed_jobs:
 
     pipeline: src/pipelines/test/tciTestGit/Jenkinsfile
     executeWhen: never
+
+  test-tciNotifications:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestNotifications/Jenkinsfile
+    executeWhen: never
+
+  test-tciEnv:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestEnv/Jenkinsfile
+    executeWhen: never
+
+  test-tciPython:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+
+    pipeline: src/pipelines/test/tciTestPython/Jenkinsfile
+    executeWhen: never
