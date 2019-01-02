@@ -3,8 +3,8 @@ services:
   tci-dev-env:
     image: tci-master
     ports:
-      - '8080:8080'
-      - '50000:50000'
+      - '${JENKINS_MAIN_HTTP_PORT}:8080'
+      - '${JENKINS_SLAVE_AGENT_PORT}:${JENKINS_SLAVE_AGENT_PORT}'
     volumes:
       - '${PWD}/config.yml:/config.yml'
       - '.data/jenkins_home:/var/jenkins_home'
@@ -19,6 +19,7 @@ services:
       JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
       JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
       JENKINS_ADMIN_PASSWORD: admin
+      JENKINS_SLAVE_AGENT_PORT: ${JENKINS_SLAVE_AGENT_PORT}
       GIT_PRIVATE_KEY: ${GIT_PRIVATE_KEY}
       TCI_LIBRARY_BRANCH: ${TCI_LIBRARY_BRANCH}
       TCI_PIPELINES_BRANCH: ${TCI_PIPELINES_BRANCH}
