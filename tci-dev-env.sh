@@ -25,10 +25,10 @@ if [ ! -f config.yml ]; then
     cp ../../src/resources/config/config.yml.template config.yml
 fi
 if [ ! -f docker-compose.yml ]; then
-    cp ../../src/resources/config/template.docker-compose.yml docker-compose.yml
+    cp ../../src/resources/config/docker-compose.yml.template docker-compose.yml
 fi
 if [ ! -f org.codefirst.SimpleThemeDecorator.xml ]; then
-    cp ../../src/resources/config/org.codefirst.SimpleThemeDecorator.xml org.codefirst.SimpleThemeDecorator.xml
+    cp ../../src/resources/config/org.codefirst.SimpleThemeDecorator.xml.template org.codefirst.SimpleThemeDecorator.xml
 fi
 
 # set action defaulted to 'restart'
