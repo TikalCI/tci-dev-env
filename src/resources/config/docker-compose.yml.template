@@ -1,6 +1,6 @@
 version: '2'
 services:
-  jenkins-master:
+  tci-dev-env:
     image: tci-master
     ports:
       - '8080:8080'
