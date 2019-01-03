@@ -3,3 +3,4 @@ environments
 .config*
 .data/
 config.yml
+temp/

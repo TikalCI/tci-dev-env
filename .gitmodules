@@ -1,7 +1,3 @@
-[submodule "tci"]
-	path = tci
-	url = git@github.com:TikalCI/tci.git
-	branch = master
 [submodule "tci-library"]
 	path = tci-library
 	url = git@github.com:TikalCI/tci-library.git
