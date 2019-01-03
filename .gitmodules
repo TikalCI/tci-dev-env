@@ -26,3 +26,11 @@
 	path = tci-jnlp-node
 	url = git@github.com:TikalCI/tci-jnlp-node.git
 	branch = master
+[submodule "tci-server"]
+	path = tci-server
+	url = git@github.com:TikalCI/tci-server.git
+	branch = master
+[submodule "tci-local"]
+	path = tci-local
+	url = git@github.com:TikalCI/tci-local.git
+	branch = master
