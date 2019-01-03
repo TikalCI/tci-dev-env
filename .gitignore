@@ -1,6 +1,7 @@
 .idea/
-environments
-.config*
 .data/
 config.yml
+docker-compose.yml
+tci.config
+environments
 temp/
