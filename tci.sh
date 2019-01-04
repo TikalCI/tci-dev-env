@@ -34,6 +34,7 @@ fi
 if [ ! -f docker-compose.yml ]; then
     cp src/resources/templates/docker-compose.yml.template docker-compose.yml
 fi
+
 if [ ! -f config.yml ]; then
     cp src/resources/templates/config.yml.template config.yml
 fi
@@ -78,29 +79,15 @@ fi
 
 if [[ "$action" == "reset" || "$action" == "stop-reset" ]]; then
    rm -rf .data
-   docker rmi tci-master
+   rm -f docker-compose.yml
+   docker rmi $TCI_MASTER_VERSION | true
+fi
+
+if [ ! -f docker-compose.yml ]; then
+    cp src/resources/templates/docker-compose.yml.template docker-compose.yml
 fi
 
 if [[ "$action" == "start" || "$action" == "clean-start"  || "$action" == "restart" || "$action" == "clean-restart" || "$action" == "reset" ]]; then
-
-    if [[ "$TCI_MASTER_BUILD_LOCAL" == "true" ]]; then
-        if [ -d tci-master ]; then
-            cd tci-master
-            git fetch origin
-        else
-            git clone git@github.com:TikalCI/tci-master.git
-            cd tci-master
-        fi
-        git fetch origin
-        git checkout $TCI_MASTER_BRANCH | true
-        git pull origin $TCI_MASTER_BRANCH
-        docker build -t tci-master .
-        cd ..
-    else
-        docker pull tikalci/tci-master
-        docker tag tikalci/tci-master tci-master
-    fi
-
     mkdir -p .data/jenkins_home/userContent
     cp -f src/resources/images/tci-small-logo.png .data/jenkins_home/userContent | true
     sed "s/TCI_SERVER_TITLE_TEXT/${TCI_SERVER_TITLE_TEXT}/ ; s/TCI_SERVER_TITLE_COLOR/${TCI_SERVER_TITLE_COLOR}/ ; s/TCI_BANNER_COLOR/${TCI_BANNER_COLOR}/" src/resources/templates/tci.css.template > .data/jenkins_home/userContent/tci.css

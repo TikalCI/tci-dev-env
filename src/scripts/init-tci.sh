@@ -6,6 +6,27 @@ mkdir -p temp
 echo "#!/bin/bash" > temp/tci.config
 echo -e "" >> temp/tci.config
 
+read -p "tci-master image [$TCI_MASTER_VERSION]? " -r
+if [[ "$REPLY" != "" ]]; then
+    TCI_MASTER_VERSION="$REPLY"
+fi
+echo export TCI_MASTER_VERSION=$TCI_MASTER_VERSION >> temp/tci.config
+export TCI_MASTER_VERSION=$TCI_MASTER_VERSION
+
+read -p "tci-library branch [$TCI_LIBRARY_BRANCH]? " -r
+if [[ "$REPLY" != "" ]]; then
+    TCI_LIBRARY_BRANCH="$REPLY"
+fi
+echo export TCI_LIBRARY_BRANCH=$TCI_LIBRARY_BRANCH >> temp/tci.config
+export TCI_LIBRARY_BRANCH=$TCI_LIBRARY_BRANCH
+
+read -p "tci-pipelines branch [$TCI_PIPELINES_BRANCH]? " -r
+if [[ "$REPLY" != "" ]]; then
+    TCI_PIPELINES_BRANCH="$REPLY"
+fi
+echo export TCI_PIPELINES_BRANCH=$TCI_PIPELINES_BRANCH >> temp/tci.config
+export TCI_PIPELINES_BRANCH=$TCI_PIPELINES_BRANCH
+
 read -p "GitHub private key file path [$GITHUB_PRIVATE_KEY_FILE_PATH]? " -r
 if [[ "$REPLY" != "" ]]; then
     GITHUB_PRIVATE_KEY_FILE_PATH="$REPLY"

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export TCI_MASTER_BRANCH=master
-export TCI_MASTER_BUILD_LOCAL=false
+export TCI_MASTER_VERSION='tikalci/tci-master-minimal:latest'
 export TCI_LIBRARY_BRANCH=master
 export TCI_PIPELINES_BRANCH=master
 export GITHUB_PRIVATE_KEY_FILE_PATH=~/.ssh/id_rsa
