@@ -94,10 +94,10 @@ if [[ "$action" == "start" || "$action" == "clean-start"  || "$action" == "resta
     cp -f src/resources/templates/org.codefirst.SimpleThemeDecorator.xml.template .data/jenkins_home/org.codefirst.SimpleThemeDecorator.xml
     docker-compose up -d
     sleep 2
-    counter=0
+    SECONDS=0
     docker-compose logs -f | while read LOGLINE
     do
-        echo ${LOGLINE}
+        echo "[ET ${SECONDS}s] ${LOGLINE}"
         [[ "${LOGLINE}" == *"Entering quiet mode. Done..."* ]] && pkill -P $$ docker-compose
     done
     echo "tci-server loaded successfully"
