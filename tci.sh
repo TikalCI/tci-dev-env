@@ -106,17 +106,17 @@ fi
 if [[ "$action" == "status" ]]; then
     status=`curl -s -I http://localhost:$JENKINS_HTTP_PORT_FOR_SLAVES | grep "403" | wc -l | xargs`
     if [[ "$status" == "1" ]]; then
-        echo "[TCI status] tci-server is up and running"
+        echo "[TCI status] tci-dev-env is up and running"
     else
         status=`curl -s -I http://localhost:$JENKINS_HTTP_PORT_FOR_SLAVES | grep "401" | wc -l | xargs`
         if [[ "$status" == "1" ]]; then
-            echo "[TCI status] tci-server is up and running"
+            echo "[TCI status] tci-dev-env is up and running"
         else
             status=`curl -s -I http://localhost:$JENKINS_HTTP_PORT_FOR_SLAVES | grep "503" | wc -l | xargs`
             if [[ "$status" == "1" ]]; then
-                echo "[TCI status] tci-server is starting"
+                echo "[TCI status] tci-dev-env is starting"
             else
-                echo "[TCI status] tci-server is down"
+                echo "[TCI status] tci-dev-env is down"
             fi
         fi
     fi
