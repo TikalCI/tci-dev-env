@@ -137,3 +137,11 @@ seed_jobs:
       credentialsId: gitsshkey
     pipeline: src/pipelines/test/tciTestTemplatePipeline/Jenkinsfile
     executeWhen: never
+
+  TCI-tciMasterCI:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: src/pipelines/tci/tciMasterCI/Jenkinsfile
+    executeWhen: never
