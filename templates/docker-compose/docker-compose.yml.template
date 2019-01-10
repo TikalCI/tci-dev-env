@@ -6,17 +6,16 @@ services:
       - '${JENKINS_HTTP_PORT_FOR_SLAVES}:8080'
       - '${JENKINS_SLAVE_AGENT_PORT}:${JENKINS_SLAVE_AGENT_PORT}'
     volumes:
-      - '${PWD}/config.yml:/config.yml'
+      - '${PWD}/tci-master-config.yml:/tci-master-config.yml'
       - '.data/jenkins_home:/var/jenkins_home'
       - '.data/jenkins-workspace-home:/jenkins-workspace-home'
       - '/var/run/docker.sock:/var/run/docker.sock'
     environment:
       JAVA_OPTS_MEM: '-Xmx1g'
-      # Disable hyper provision of slaves - docker plugin strategy is enough
       JAVA_OPTS_LOAD_STATS_CLOCK: ''
       JENKINS_ENV_ADMIN_USER: admin
       JENKINS_ENV_HOST_IP: ${TCI_HOST_IP}
-      JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
+      JENKINS_ENV_CONFIG_YML_URL: file:///tci-master-config.yml
       JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
       JENKINS_ADMIN_PASSWORD: admin
       JENKINS_HTTP_PORT_FOR_SLAVES: ${JENKINS_HTTP_PORT_FOR_SLAVES}
