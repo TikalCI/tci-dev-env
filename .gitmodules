@@ -30,3 +30,7 @@
 	path = tci-local
 	url = git@github.com:TikalCI/tci-local.git
 	branch = master
+[submodule "tci-app-set"]
+	path = tci-app-set
+	url = git@github.com:TikalCI/tci-app-set.git
+	branch = master
