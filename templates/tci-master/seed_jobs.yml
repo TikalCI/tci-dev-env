@@ -94,4 +94,36 @@ seed_jobs:
       credentialsId: gitsshkey
     pipeline: src/pipelines/tci/tciMasterCI/Jenkinsfile
     executeWhen: never
+    parameters:
+      TYPE:
+        type: choice
+        choices:
+          - minimal
+          - full
+      VERSION:
+        type: string
+        value: ''
+      PUBLISH:
+        type: boolean
+        value: false
 
+  TCI-tagTciCodeVersions:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: src/pipelines/tci/tcTagTciCodeVersions/Jenkinsfile
+    executeWhen: never
+    parameters:
+      REPO:
+        type: choice
+        choices:
+          - ''
+          - tci-library
+          - tci-pipelines
+      VERSION:
+        type: string
+        value: ''
+      SET_AS_LTS:
+        type: boolean
+        value: false
