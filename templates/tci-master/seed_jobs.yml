@@ -87,6 +87,14 @@ seed_jobs:
     pipeline: src/pipelines/test/tciTestTemplatePipeline/Jenkinsfile
     executeWhen: never
 
+  test-mavenCIJob:
+    source:
+      remote: git@github.com:TikalCI/tci-app-set.git
+      branch: '${TCI_APP_SET_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: apps/maven-app/Jenkinsfile
+    executeWhen: never
+
   TCI-tciMasterCI:
     source:
       remote: git@github.com:TikalCI/tci-pipelines.git

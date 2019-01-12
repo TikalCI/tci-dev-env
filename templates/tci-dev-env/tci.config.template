@@ -3,6 +3,7 @@
 export TCI_MASTER_VERSION='tikalci/tci-master-minimal:latest'
 export TCI_LIBRARY_BRANCH=master
 export TCI_PIPELINES_BRANCH=master
+export TCI_APP_SET_BRANCH=master
 export GITHUB_PRIVATE_KEY_FILE_PATH=~/.ssh/id_rsa
 export TCI_SERVER_TITLE_TEXT='TCI development environment'
 export TCI_SERVER_TITLE_COLOR=orange

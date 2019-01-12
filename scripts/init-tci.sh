@@ -27,6 +27,13 @@ fi
 echo export TCI_PIPELINES_BRANCH=$TCI_PIPELINES_BRANCH >> temp/tci.config
 export TCI_PIPELINES_BRANCH=$TCI_PIPELINES_BRANCH
 
+read -p "tci-app-set branch [$TCI_APP_SET_BRANCH]? " -r
+if [[ "$REPLY" != "" ]]; then
+    TCI_APP_SET_BRANCH="$REPLY"
+fi
+echo export TCI_APP_SET_BRANCH=$TCI_APP_SET_BRANCH >> temp/tci.config
+export TCI_APP_SET_BRANCH=$TCI_APP_SET_BRANCH
+
 read -p "GitHub private key file path [$GITHUB_PRIVATE_KEY_FILE_PATH]? " -r
 if [[ "$REPLY" != "" ]]; then
     GITHUB_PRIVATE_KEY_FILE_PATH="$REPLY"
