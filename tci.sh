@@ -76,8 +76,9 @@ function setupTciScript {
     cat setup/tci-master/*.yml >> tci-master-config.yml | true
 
     mkdir -p .data/jenkins_home/userContent
-    cp -f src/resources/images/tci-small-logo.png .data/jenkins_home/userContent | true
+    cp -n templates/userContent/* setup/userContent/ 2> /dev/null | true
     sed "s/TCI_SERVER_TITLE_TEXT/${TCI_SERVER_TITLE_TEXT}/ ; s/TCI_SERVER_TITLE_COLOR/${TCI_SERVER_TITLE_COLOR}/ ; s/TCI_BANNER_COLOR/${TCI_BANNER_COLOR}/" templates/tci-dev-env/tci.css.template > .data/jenkins_home/userContent/tci.css
+    cp setup/userContent/* .data/jenkins_home/userContent 2> /dev/null | true
 
     if [[ ! -n "$TCI_HOST_IP" || "$TCI_HOST_IP" == "*" ]]; then
         export TCI_HOST_IP="$(/sbin/ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1 | sed -e 's/addr://')"
