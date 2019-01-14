@@ -7,12 +7,12 @@ seed_jobs:
     pipeline: src/pipelines/bootstrap/tci-master-sanity-check/Jenkinsfile
     executeWhen: never
 
-  test-tciOverall:
+  test-tciAll:
     source:
       remote: git@github.com:TikalCI/tci-pipelines.git
       branch: '${TCI_PIPELINES_BRANCH}'
       credentialsId: gitsshkey
-    pipeline: src/pipelines/test/tciTestOverallSimple/Jenkinsfile
+    pipeline: src/pipelines/test/tciTestAll/Jenkinsfile
     executeWhen: never
 
   test-tciGeneral:
@@ -95,6 +95,34 @@ seed_jobs:
     pipeline: src/pipelines/test/tciTestTemplatePipeline/Jenkinsfile
     executeWhen: never
 
+  test-tciParallelPhase:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: src/pipelines/test/tciTestParallelPhase/Jenkinsfile
+    executeWhen: never
+
+  test-fromParallelPhase:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: src/pipelines/test/tciTestFromParallelPhase/Jenkinsfile
+    executeWhen: never
+    parameters:
+      testOption:
+        type: choice
+        choices:
+          - option1
+          - option2
+          - option3
+      testString:
+        type: string
+        value: ''
+      booleanParam:
+        type: boolean
+        value: false
   test-mavenCIJob:
     source:
       remote: git@github.com:TikalCI/tci-app-set.git
