@@ -41,21 +41,21 @@ fi
 echo export GITHUB_PRIVATE_KEY_FILE_PATH=$GITHUB_PRIVATE_KEY_FILE_PATH >> temp/tci.config
 export GITHUB_PRIVATE_KEY_FILE_PATH=$GITHUB_PRIVATE_KEY_FILE_PATH
 
-read -p "TCI branner title [$TCI_SERVER_TITLE_TEXT]? " -r
+read -p "TCI banner title [$TCI_SERVER_TITLE_TEXT]? " -r
 if [[ "$REPLY" != "" ]]; then
     TCI_SERVER_TITLE_TEXT="$REPLY"
 fi
 echo export TCI_SERVER_TITLE_TEXT=\'$TCI_SERVER_TITLE_TEXT\'  >> temp/tci.config
 export TCI_SERVER_TITLE_TEXT=\'$TCI_SERVER_TITLE_TEXT\'
 
-read -p "TCI branner title color [$TCI_SERVER_TITLE_COLOR]? " -r
+read -p "TCI banner title color [$TCI_SERVER_TITLE_COLOR]? " -r
 if [[ "$REPLY" != "" ]]; then
     TCI_SERVER_TITLE_COLOR="$REPLY"
 fi
 echo export TCI_SERVER_TITLE_COLOR=$TCI_SERVER_TITLE_COLOR  >> temp/tci.config
 export TCI_SERVER_TITLE_COLOR=$TCI_SERVER_TITLE_COLOR
 
-read -p "TCI branner background color [$TCI_BANNER_COLOR]? " -r
+read -p "TCI banner background color [$TCI_BANNER_COLOR]? " -r
 if [[ "$REPLY" != "" ]]; then
     TCI_BANNER_COLOR="$REPLY"
 fi
