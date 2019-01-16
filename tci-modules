@@ -1,36 +1,27 @@
 [submodule "tci-library"]
 	path = tci-library
 	url = git@github.com:TikalCI/tci-library.git
-	branch = master
 [submodule "tci-pipelines"]
 	path = tci-pipelines
 	url = git@github.com:TikalCI/tci-pipelines.git
-	branch = master
 [submodule "tci-cli"]
 	path = tci-cli
 	url = git@github.com:TikalCI/tci-cli.git
-	branch = master
 [submodule "tci-master"]
 	path = tci-master
 	url = git@github.com:TikalCI/tci-master.git
-	branch = master
 [submodule "tci-bloody-jenkins"]
 	path = tci-bloody-jenkins
 	url = git@github.com:TikalCI/tci-bloody-jenkins.git
-	branch = master
 [submodule "tci-jnlp-node"]
 	path = tci-jnlp-node
 	url = git@github.com:TikalCI/tci-jnlp-node.git
-	branch = master
 [submodule "tci-server"]
 	path = tci-server
 	url = git@github.com:TikalCI/tci-server.git
-	branch = master
 [submodule "tci-local"]
 	path = tci-local
 	url = git@github.com:TikalCI/tci-local.git
-	branch = master
 [submodule "tci-app-set"]
 	path = tci-app-set
 	url = git@github.com:TikalCI/tci-app-set.git
-	branch = master
