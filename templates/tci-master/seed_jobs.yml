@@ -1,5 +1,5 @@
 seed_jobs:
-  tci-master-sanity-check:
+  tci-sanity-check:
     source:
       remote: git@github.com:TikalCI/tci-pipelines.git
       branch: '\${TCI_PIPELINES_BRANCH}'
