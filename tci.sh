@@ -74,9 +74,10 @@ function setupTciScript {
     numberOfFiles=`ls -1q setup/tci-master/*.yml 2> /dev/null | wc -l | xargs`
     cat setup/tci-master/*.yml >> tci-master-config.yml | true
 
-    mkdir -p .data/jenkins_home/userContent
+    mkdir -p setup/userContent
     cp -n templates/userContent/* setup/userContent/ 2> /dev/null | true
     sed "s/TCI_SERVER_TITLE_TEXT/${TCI_SERVER_TITLE_TEXT}/ ; s/TCI_SERVER_TITLE_COLOR/${TCI_SERVER_TITLE_COLOR}/ ; s/TCI_BANNER_COLOR/${TCI_BANNER_COLOR}/" templates/tci-dev-env/tci.css.template > .data/jenkins_home/userContent/tci.css
+    mkdir -p .data/jenkins_home/userContent
     cp setup/userContent/* .data/jenkins_home/userContent 2> /dev/null | true
 
     if [[ ! -n "$TCI_HOST_IP" || "$TCI_HOST_IP" == "*" ]]; then
