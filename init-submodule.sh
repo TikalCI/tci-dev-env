@@ -14,10 +14,10 @@ else
    exit 1
 fi
 
-git submodule update --init $submodule
+git clone git@github.com:TikalCI/${submodule}.git
 cd $submodule
 git checkout $branch | true
 git status
 cd ..
-./tci-dev-env.sh info
+
 
