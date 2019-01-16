@@ -56,7 +56,7 @@ inputVariable "tci-master image" TCI_MASTER_VERSION
 inputVariable "tci-library branch" TCI_LIBRARY_BRANCH
 inputVariable "tci-pipelines branch" TCI_PIPELINES_BRANCH
 inputVariable "tci-app-set branch" TCI_APP_SET_BRANCH
-inputVariable "GitHub private key file path" GITHUB_PRIVATE_KEY_FILE_PATH
+inputVariable "GitHub private key file path" GIT_PRIVATE_KEY_FILE_PATH
 inputTextVariable "TCI banner title" TCI_SERVER_TITLE_TEXT
 inputVariable "TCI banner title color" TCI_SERVER_TITLE_COLOR
 inputVariable "TCI banner background color" TCI_BANNER_COLOR
