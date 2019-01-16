@@ -3,7 +3,7 @@ pipeline_libraries:
     source:
       remote: git@github.com:TikalCI/tci-library.git
       credentialsId: gitsshkey
-    defaultVersion: ${TCI_LIBRARY_BRANCH}
+    defaultVersion: '${TCI_LIBRARY_BRANCH}'
     implicit: false
     allowVersionOverride: true
     includeInChangesets: true
