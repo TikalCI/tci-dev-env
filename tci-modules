@@ -25,3 +25,6 @@
 [submodule "tci-app-set"]
 	path = tci-app-set
 	url = git@github.com:TikalCI/tci-app-set.git
+[submodule "tci-cust"]
+	path = tci-cust
+	url = git@github.com:TikalCI/tci-cust.git

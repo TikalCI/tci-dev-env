@@ -7,4 +7,5 @@ tci.config
 environments
 temp/
 setup/
+cust/
 tci-*/
