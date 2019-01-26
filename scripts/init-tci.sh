@@ -62,7 +62,7 @@ inputVariable "TCI banner title color" TCI_SERVER_TITLE_COLOR
 inputVariable "TCI banner background color" TCI_BANNER_COLOR
 inputVariable "Jenkins server HTTP port" JENKINS_HTTP_PORT_FOR_SLAVES
 inputVariable "Jenkins JNLP port for slaves" JENKINS_SLAVE_AGENT_PORT
-inputVariable "Number of exeuters on master" JENKINS_ENV_EXECUTERS
+inputVariable "Number of executers on master" JENKINS_ENV_EXECUTERS
 inputVariable "TCI host IP address (set to * for automatic IP calculation)" TCI_HOST_IP
 
 cp temp/tci.config tci.config
