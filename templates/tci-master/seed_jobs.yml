@@ -103,6 +103,14 @@ seed_jobs:
     pipeline: src/pipelines/test/tciTestParallelPhase/Jenkinsfile
     executeWhen: never
 
+  test-randomStatus:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '\${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: src/pipelines/test/tciTestRandomStatus/Jenkinsfile
+    executeWhen: never
+
   test-fromParallelPhase:
     source:
       remote: git@github.com:TikalCI/tci-pipelines.git
@@ -123,6 +131,7 @@ seed_jobs:
       booleanParam:
         type: boolean
         value: false
+
   test-mavenCIJob:
     source:
       remote: git@github.com:TikalCI/tci-app-set.git
