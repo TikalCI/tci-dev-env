@@ -132,6 +132,22 @@ seed_jobs:
         type: boolean
         value: false
 
+  test-exitWithStatus:
+    source:
+      remote: git@github.com:TikalCI/tci-pipelines.git
+      branch: '\${TCI_PIPELINES_BRANCH}'
+      credentialsId: gitsshkey
+    pipeline: src/pipelines/test/tciTestExitWithStatus/Jenkinsfile
+    executeWhen: never
+    parameters:
+      exitStatus:
+        type: choice
+        choices:
+          - SUCCESS
+          - FAILURE
+          - UNSTABLE
+          - ABORTED
+
   test-mavenCIJob:
     source:
       remote: git@github.com:TikalCI/tci-app-set.git
